@@ -1,0 +1,1 @@
+/Users/shaggy/Downloads/appp/childcare/ios/Build/Intermediates.noindex/ArchiveIntermediates/childcare/InstallationBuildProductsLocation/Applications/childcarecentral.app

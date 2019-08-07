@@ -1,0 +1,36 @@
+dependencies: \
+  /Users/shaggy/Downloads/appp/childcare/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedModule.m \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Target\ Support\ Files/React-RCTAnimation/React-RCTAnimation-prefix.pch \
+  /Users/shaggy/Downloads/appp/childcare/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedModule.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTBridgeModule.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTDefines.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTEventDispatcher.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTBridge.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTBridgeDelegate.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTJavaScriptLoader.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTFrameUpdate.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTInvalidating.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTEventEmitter.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTSurfacePresenterStub.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTUIManager.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTRootView.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTViewManager.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTConvert.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTAnimationType.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTBorderStyle.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTLog.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTAssert.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTUtils.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTPointerEvents.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTTextDecorationLineType.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Private/yoga/Yoga.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Private/yoga/YGEnums.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Private/yoga/YGMacros.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Private/yoga/YGValue.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/UIView+React.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTComponent.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTUIManagerObserverCoordinator.h \
+  /Users/shaggy/Downloads/appp/childcare/ios/Pods/Headers/Public/React-Core/React/RCTUIManagerUtils.h \
+  /Users/shaggy/Downloads/appp/childcare/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/shaggy/Downloads/appp/childcare/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h \
+  /Users/shaggy/Downloads/appp/childcare/node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h
