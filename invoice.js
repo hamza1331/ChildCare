@@ -42,33 +42,10 @@ export default class Invoice extends React.Component {
       useremail:"",
       successvisible:false,
       singlecheckout:false,
+      funcount:0
     }
   }
 
-  
-
-  buyItem = async(sku) => {
-    console.info('buyItem', sku);
-    // const purchase = await RNIap.buyProduct(sku);
-    // const products = await RNIap.buySubscription(sku);
-    // const purchase = await RNIap.buyProductWithoutFinishTransaction(sku);
-    try {
-      const products = await RNIap.getProducts(itemSkus);
-    console.log(products)
-      const purchase = await RNIap.buyProduct(sku)
-      .then(purchase => {
-        console.log('respo=====>',purchase.transactionReceipt)
-       // handle success of purchase product
-       }).catch((error) => {
-        console.log(error.message);
-       })
-      // console.log('purchase', purchase);
-      // await RNIap.consumePurchaseAndroid(purchase.purchaseToken);
-    
-    } catch (err) {
-      console.warn(err.code, err.message);
-    }
-  }
 
 
   componentDidMount(){
@@ -76,14 +53,19 @@ export default class Invoice extends React.Component {
    // const rrrr=await RNIap.initConnection().then(res=>console.log('connection....'+res))
     
     const { navigation } = this.props;
+    console.log("naviggateedd===>",navigation.getParam('count'),
+    navigation.getParam('price'),navigation.getParam('pracmail'),navigation.getParam('usermail'))
+
     this.setState({count:navigation.getParam('count')})
     this.setState({price:navigation.getParam('price')})
     this.setState({practitioneremail:navigation.getParam('pracmail')})
     this.setState({useremail:navigation.getParam('usermail')})
   }
-  hadlerespones=data=>{  
+  hadlerespones(data){  
     console.log("checkout follow 0")
-    if(data.title==='success'){
+    var count=0
+    console.log("statecounthere==>",this.state.count)
+    if(data==='success'){
       this.setState({showpaypal:false})
       this.setState({successfulltrans:true})
      // this.setState({successvisible:true})
@@ -122,15 +104,15 @@ export default class Invoice extends React.Component {
      else{
       const allorderofthi=firebase.database().ref("bucket")
       const allorderofthis=allorderofthi.orderByChild("buyer").equalTo(this.state.useremail).limitToLast(1);
-      var count=0
+      if(this.state.funcount===0){
+        console.log("funcconout==>",this.state.funcount)
       allorderofthis.on("value",snapshot=>{
-        console.log("checkout follow 5")
         snapshot.forEach(child=>{
             child.ref.update({
               checkout:true,
               checkout_time:new Date()
             })
-            if(count==0){
+            
             firebase.database().ref("notification").push(
               {
                 datetime:new Date(),
@@ -144,15 +126,15 @@ export default class Invoice extends React.Component {
                 console.log("Failed");
               });
             
-          }
-          count=16
     
         })
       })
+    }
+  this.setState({funcount:16})
      }
     }
-    if(data.title==='cancel'){
-      this.setState({showpaypal:false})
+    if(data==='cancel'){
+
       this.setState({successfulltrans:false})
 
     }
@@ -162,28 +144,53 @@ export default class Invoice extends React.Component {
 
   async purchaseproduct(){
     try {
-      const purchase = await RNIap.buyProduct(itemSkus);
+      const purchase = await RNIap.buyProduct('CCCAPP');
       
-      console.info(purchase);
-      return true
+      console.log("purchaseoutput=>>",purchase);
+    //  console.log("recipeny===>",RNIap.requestReceiptIOS())
+  
+  const receiptBody = {
+    'receipt-data': purchase.transactionReceipt,
+    'password': 'Trrrrr@2333'   //secret key
+  };
+ 
+      const result = await RNIap.validateReceiptIos(receiptBody, false);
+      console.log("purchase result===>",result);
+      if(result.status!==0){
+        this.hadlerespones('success')
+        return "0"
+      }    
+      else{
+        alert("Invalid Receipt!")
+        return result.status
+      }
+
     } catch (err) {
       if (err.message !== 'Cancelled.') {
-        Alert.alert(err.message);
+        alert(err.message);
       }
      // console.warn(err.code, err.message);
   
-      return false;
+      return "1";
     }
   }
 
   purchasefinish(){
-    if(this.purchaseproduct()===true)
+   try{ 
+    var k= this.purchaseproduct()
+    
+
+   }
+   catch(e){
+     console.log("purchaseerror=>",e)
+   }
+   /* if(this.purchaseproduct()===true)
     (
       this.hadlerespones('success')
     )
     else{
       alert("Error can't perform trasaction")
-    }
+    }*/
   }
 
   render() {
